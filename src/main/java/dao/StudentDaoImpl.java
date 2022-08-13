@@ -1,11 +1,10 @@
 package dao;
-
 import model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDaoList implements StudentDao {
+public class StudentDaoImpl implements StudentDao {
 
     private static List<Student> students = new ArrayList<>();
 

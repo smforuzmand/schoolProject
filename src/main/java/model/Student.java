@@ -1,4 +1,7 @@
-package org.example;
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
     private int id;
@@ -6,14 +9,14 @@ public class Student {
     private String email;
     private String address;
 
+    private List<Course> courses;
+
     public Student(int id, String name, String email, String address) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
-    }
-
-    public Student() {
+        courses = new ArrayList<>();
     }
 
     public int getId() {
@@ -46,5 +49,31 @@ public class Student {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void register(Course course) {
+        if (course != null) {
+           //refer to the register method of Student class
+            course.register(this);
+            courses.add(course);
+        }
+    }
+
+    public void unregister(Course course) {
+        if (course != null) {
+            course.unregister(this);
+            courses.remove(course);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", courses=" + courses +
+                '}';
     }
 }

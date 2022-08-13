@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseDaoList implements CourseDao {
+public class CourseDaoImpl implements CourseDao {
 
 
     private static List<Course> courseList = new ArrayList<>();
